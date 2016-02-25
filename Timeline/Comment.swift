@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+struct Comment: Equatable {
+    let username: String
+    let text: String
+    let postIdentifier: String
+    let identifier: String?
+    
+    init(username: String, text: String, postIdentifier: String, identifier: String?) {
+        self.username = username
+        self.text = text
+        self.postIdentifier = postIdentifier
+        self.identifier = nil
+        
+    }
+}
+
+func ==(lhs: Comment, rhs: Comment) -> Bool {
+    return lhs.username == rhs.identifier
+}

@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+struct Like: Equatable {
+    let username: String
+    let postIdentifier: String
+    let identifier: String
+    
+    init(username: String, postIdentifier: String, identifier: String) {
+        self.username = username
+        self.postIdentifier = postIdentifier
+        self.identifier = identifier
+        
+        
+    }
+}
+
+func ==(lhs: Like, rhs: Like) -> Bool {
+    return lhs.username == rhs.identifier
+}
