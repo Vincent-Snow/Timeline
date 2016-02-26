@@ -10,9 +10,10 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User!
-    currentUser = mockUsers().
-
+    var currentUser: User! = nil
+    
+   
+    
     static let sharedController = UserController()
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
@@ -67,5 +68,6 @@ class UserController {
 
 
 }
+
 
   
