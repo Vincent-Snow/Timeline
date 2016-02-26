@@ -11,9 +11,9 @@ import Foundation
 struct Like: Equatable {
     let username: String
     let postIdentifier: String
-    let identifier: String
+    let identifier: String?
     
-    init(username: String, postIdentifier: String, identifier: String) {
+    init(username: String, postIdentifier: String, identifier: String? = nil) {
         self.username = username
         self.postIdentifier = postIdentifier
         self.identifier = identifier

@@ -10,46 +10,45 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User! = nil
-    
+    var currentUser: User! = UserController.mockUsers()[0]
    
     
     static let sharedController = UserController()
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
-        
+        completion(user: mockUsers()[0])
     }
 
     static func fetchAllUsers(completion: (user: [User]) -> user) {
-        
+        completion(user: mockUsers())
     }
     
     static func followUser(user: User, completion: (success: Bool) -> Void) {
-        
+        completion(success: true)
     }
     
     static func unfollowUser(user: User, completion: (success: Bool) -> Void) {
-        
+        completion(success: true)
     }
     
     static func userFollowsUser(user: User, userCheck: User, completion: (follows: Bool) -> Void) {
-        
+        completion(follows: true)
     }
     
     static func followedByUser(user: User, completion: (users: [User]?) -> Void) {
-        
+        completion(users: mockUsers())
     }
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
-        
+        completion(success: true, user: mockUsers()[0])
     }
     
     static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
-        
+        completion(success: true, user: mockUsers()[0])
     }
     
     static func updateUser(user: User, username: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
-        
+        completion(success: true, user: mockUsers()[0])
     }
     
     static func logOutCurrentUser() {

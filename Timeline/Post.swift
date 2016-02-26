@@ -9,20 +9,20 @@
 import Foundation
 
 struct Post: Equatable {
-    let imageEndPoint: Int
+    let imageEndPoint: String
     let caption: String?
     let username: String
-    let comments: [String]
-    let likes: [String]
+    let comments: [String]?
+    let likes: [String]?
     let identifier: String?
     
-    init(imageEndPoint: Int, caption: String?, username: String, comments: [String], likes: [String], identifier: String?) {
+    init(imageEndPoint: String, caption: String? = nil, username: String, comments: [Comment]? = nil, likes: [Like]? = nil, identifier: String? = nil) {
         self.imageEndPoint = imageEndPoint
-        self.caption = nil
+        self.caption = caption
         self.username = username
         self.comments = []
         self.likes = []
-        self.identifier = nil
+        self.identifier = identifier
         
         
         

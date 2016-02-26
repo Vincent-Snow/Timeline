@@ -14,11 +14,11 @@ struct Comment: Equatable {
     let postIdentifier: String
     let identifier: String?
     
-    init(username: String, text: String, postIdentifier: String, identifier: String?) {
+    init(username: String, text: String, postIdentifier: String, identifier: String? = nil) {
         self.username = username
         self.text = text
         self.postIdentifier = postIdentifier
-        self.identifier = nil
+        self.identifier = identifier
         
     }
 }
