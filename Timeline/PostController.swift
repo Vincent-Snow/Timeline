@@ -11,7 +11,7 @@ import UIKit
 
 class PostController {
     
-    static func fetchTimelineForUser(user: User, completion: (posts: [Post]) -> Void) {
+    static func fetchTimelineForUser(user: User, completion: (posts: [Post]?) -> Void) {
         completion(posts: mockPosts())
     }
     

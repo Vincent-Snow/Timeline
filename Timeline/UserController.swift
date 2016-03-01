@@ -19,8 +19,8 @@ class UserController {
         completion(user: mockUsers()[0])
     }
 
-    static func fetchAllUsers(completion: (user: [User]) -> user) {
-        completion(user: mockUsers())
+    static func fetchAllUsers(completion: (users: [User]) -> Void) {
+        completion(users: mockUsers())
     }
     
     static func followUser(user: User, completion: (success: Bool) -> Void) {
