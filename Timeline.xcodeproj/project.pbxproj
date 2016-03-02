@@ -15,6 +15,7 @@
 		01E3FC451BE92C7700187536 /* TimelineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3FC441BE92C7700187536 /* TimelineUITests.swift */; };
 		C30633A61C8246D4006CB6EA /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30633A51C8246D4006CB6EA /* LoginSignUpViewController.swift */; };
 		C342B7471C7D389600C583C6 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C342B7461C7D389600C583C6 /* UserController.swift */; };
+		C34E78021C854F2B008F5E7C /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E78011C854F2B008F5E7C /* UserSearchResultsTableViewController.swift */; };
 		C34FFA0D1C800C4700708ADA /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34FFA0C1C800C4700708ADA /* ImageController.swift */; };
 		C35E88311C7EC5E80094B1EE /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E88301C7EC5E80094B1EE /* PostController.swift */; };
 		C3A322161C7D0F7C00844511 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A322151C7D0F7C00844511 /* TimelineTableViewController.swift */; };
@@ -61,6 +62,7 @@
 		01E3FC461BE92C7700187536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30633A51C8246D4006CB6EA /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
 		C342B7461C7D389600C583C6 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		C34E78011C854F2B008F5E7C /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchResultsTableViewController.swift; path = ../UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		C34FFA0C1C800C4700708ADA /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		C35E88301C7EC5E80094B1EE /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		C3A322151C7D0F7C00844511 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				C3A3221B1C7D1D6200844511 /* ProfileViewController.swift */,
 				C3A322191C7D176C00844511 /* UserSearchTableViewController.swift */,
 				C3A322171C7D11F500844511 /* PostDetailTableViewController.swift */,
+				C34E78011C854F2B008F5E7C /* UserSearchResultsTableViewController.swift */,
 				C3A322151C7D0F7C00844511 /* TimelineTableViewController.swift */,
 				01E3FC2B1BE92C7600187536 /* Assets.xcassets */,
 				01E3FC2D1BE92C7600187536 /* LaunchScreen.storyboard */,
@@ -298,6 +301,7 @@
 				C3A322201C7D281D00844511 /* LoginSignupChoiceViewController.swift in Sources */,
 				C3A322281C7D349700844511 /* Post.swift in Sources */,
 				C3A3221E1C7D22C300844511 /* AddPhotoTableViewController.swift in Sources */,
+				C34E78021C854F2B008F5E7C /* UserSearchResultsTableViewController.swift in Sources */,
 				C3A322161C7D0F7C00844511 /* TimelineTableViewController.swift in Sources */,
 				01E3FC251BE92C7600187536 /* AppDelegate.swift in Sources */,
 				C3A322261C7D30E800844511 /* Like.swift in Sources */,

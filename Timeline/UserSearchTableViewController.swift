@@ -8,9 +8,11 @@
 
 import UIKit
 
-class UserSearchTableViewController: UITableViewController {
+class UserSearchTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var usersDataSource: [User] = []
+    
+    var searchController: UISearchController!
     
     @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     
@@ -43,6 +45,7 @@ class UserSearchTableViewController: UITableViewController {
         super.viewDidLoad()
         
         updateViewBasedOnMode()
+        setUpSearchController()
      
     }
 
@@ -63,6 +66,26 @@ class UserSearchTableViewController: UITableViewController {
             
             self.tableView.reloadData()
         }
+    }
+    
+    func setUpSearchController() {
+       let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserSearchResultsTableViewController")
+        
+        searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
+        
+        definesPresentationContext = true
+    }
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchTerm = searchController.searchBar.text!.lowercaseString
+        
+        let resultsViewController = searchController.searchResultsController as! UserSearchResultsTableViewController
+        
+        resultsViewController.userResultsDataSource = usersDataSource.filter({$0.username.lowercaseString.containsString(searchTerm)})
+        resultsViewController.tableView.reloadData()
     }
     
     @IBAction func selectedIndexChanged(sender: AnyObject) {
