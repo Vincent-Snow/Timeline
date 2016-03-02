@@ -48,15 +48,15 @@
             <objects>
                 <tableViewController id="2yR-fF-D8C" customClass="PostDetailTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lH2-EE-c24">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Xo-Sp-qk9">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Xo-Sp-qk9" id="Ksa-ID-rO1">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -66,10 +66,11 @@
                             <outlet property="delegate" destination="2yR-fF-D8C" id="MAB-wJ-NnM"/>
                         </connections>
                     </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzV-f3-1Hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541" y="422"/>
+            <point key="canvasLocation" x="1319" y="1764"/>
         </scene>
         <!--User Search Table View Controller-->
         <scene sceneID="3ha-dF-IUp">
@@ -137,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="631" y="1015"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Title-->
         <scene sceneID="yql-pJ-11R">
             <objects>
                 <viewController id="LYN-mR-umO" customClass="ProfileViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
@@ -179,6 +180,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="LBt-sJ-bPT" id="XX3-py-4Vl"/>
+                                            <segue destination="2yR-fF-D8C" kind="show" id="IXW-QD-AkU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -238,10 +240,17 @@
                             <constraint firstAttribute="trailing" secondItem="0oF-1k-eUT" secondAttribute="trailing" id="cWj-ud-5IY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rxx-ln-73x"/>
+                    <navigationItem key="navigationItem" title="Title" id="sdP-VQ-rpw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0IU-q3-zIq">
+                            <connections>
+                                <segue destination="PGp-uY-cBI" kind="presentation" identifier="editUser" id="x6I-iD-s4D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="collectionView" destination="0oF-1k-eUT" id="KIJ-Kh-5CK"/>
+                        <outlet property="editBarButton" destination="0IU-q3-zIq" id="haC-Tx-zPn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2r-98-ejo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -305,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9B-SR-Z3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575" y="1889"/>
+            <point key="canvasLocation" x="1673" y="2497"/>
         </scene>
         <!--Login Signup Choice View Controller-->
         <scene sceneID="N2x-I8-puL">
@@ -554,7 +563,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5if-Ze-5vu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8" y="1730"/>
+            <point key="canvasLocation" x="-226" y="1822"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FjZ-cb-cux">
@@ -580,6 +589,6 @@
         <segue reference="FsL-Td-W88"/>
         <segue reference="U1n-T8-rpT"/>
         <segue reference="tn8-f8-bxl"/>
-        <segue reference="W2e-mH-ik5"/>
+        <segue reference="x6I-iD-s4D"/>
     </inferredMetricsTieBreakers>
 </document>
