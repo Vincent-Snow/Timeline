@@ -149,41 +149,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0oF-1k-eUT">
-                                <rect key="frame" x="0.0" y="49" width="320" height="519"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0oF-1k-eUT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FsQ-Fu-yoX">
-                                    <size key="itemSize" width="82" height="78"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="itemSize" width="127" height="136"/>
+                                    <size key="headerReferenceSize" width="50" height="89"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hLg-FQ-6mg">
-                                        <rect key="frame" x="0.0" y="114" width="82" height="78"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="hLg-FQ-6mg" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="153" width="127" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="82" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="127" height="136"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LBt-sJ-bPT">
+                                                    <rect key="frame" x="8" y="8" width="111" height="120"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="LBt-sJ-bPT" secondAttribute="trailing" id="2zf-Xa-NFR"/>
+                                            <constraint firstItem="LBt-sJ-bPT" firstAttribute="top" secondItem="hLg-FQ-6mg" secondAttribute="topMargin" id="D6w-Yg-R2P"/>
+                                            <constraint firstItem="LBt-sJ-bPT" firstAttribute="leading" secondItem="hLg-FQ-6mg" secondAttribute="leadingMargin" id="bYO-FA-Hcw"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="LBt-sJ-bPT" secondAttribute="bottom" id="qPQ-1f-zzP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="LBt-sJ-bPT" id="XX3-py-4Vl"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kRE-E1-IWE">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kRE-E1-IWE" userLabel="Profile Header Collection Reusable View" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="89"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4R7-6V-ha4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sX2-dE-1Z0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n1-q3-ArD">
+                                                    <rect key="frame" x="0.0" y="30" width="320" height="29"/>
+                                                    <state key="normal" title="url"/>
+                                                    <connections>
+                                                        <action selector="urlButtonTapped:" destination="kRE-E1-IWE" eventType="touchUpInside" id="5HR-07-PMl"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUw-vT-Z8n">
+                                                    <rect key="frame" x="0.0" y="59" width="320" height="30"/>
+                                                    <state key="normal" title="Follow"/>
+                                                    <connections>
+                                                        <action selector="followButtonTapped:" destination="kRE-E1-IWE" eventType="touchUpInside" id="a7a-pW-ip2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sX2-dE-1Z0" firstAttribute="height" secondItem="0n1-q3-ArD" secondAttribute="height" id="iiW-bk-9Oq"/>
+                                                <constraint firstItem="0n1-q3-ArD" firstAttribute="height" secondItem="kUw-vT-Z8n" secondAttribute="height" id="zjk-Yg-R7c"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4R7-6V-ha4" firstAttribute="leading" secondItem="kRE-E1-IWE" secondAttribute="leading" id="4rx-3Y-nx4"/>
+                                        <constraint firstAttribute="bottom" secondItem="4R7-6V-ha4" secondAttribute="bottom" id="PAw-iC-K6Q"/>
+                                        <constraint firstItem="4R7-6V-ha4" firstAttribute="top" secondItem="kRE-E1-IWE" secondAttribute="top" id="Qb6-6A-G9b"/>
+                                        <constraint firstAttribute="trailing" secondItem="4R7-6V-ha4" secondAttribute="trailing" id="aKX-Nl-i4N"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="bioLabel" destination="sX2-dE-1Z0" id="4X5-my-Shf"/>
+                                        <outlet property="followButton" destination="kUw-vT-Z8n" id="8FW-RF-lVi"/>
+                                        <outlet property="urlButton" destination="0n1-q3-ArD" id="bow-F1-y9U"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0oF-1k-eUT" firstAttribute="leading" secondItem="m26-09-PZT" secondAttribute="leading" id="44K-cx-cx8"/>
-                            <constraint firstItem="0oF-1k-eUT" firstAttribute="bottom" secondItem="m26-09-PZT" secondAttribute="bottomMargin" id="DJw-Ul-z8h"/>
-                            <constraint firstItem="0oF-1k-eUT" firstAttribute="top" secondItem="cSj-Ov-GhZ" secondAttribute="bottom" id="J0V-t8-SKV"/>
-                            <constraint firstAttribute="trailing" secondItem="0oF-1k-eUT" secondAttribute="trailing" id="bYc-ks-f2X"/>
+                            <constraint firstAttribute="bottom" secondItem="0oF-1k-eUT" secondAttribute="bottom" id="3gH-Gg-BJC"/>
+                            <constraint firstItem="0oF-1k-eUT" firstAttribute="top" secondItem="m26-09-PZT" secondAttribute="top" id="5s7-Ys-ReN"/>
+                            <constraint firstItem="0oF-1k-eUT" firstAttribute="leading" secondItem="m26-09-PZT" secondAttribute="leading" id="Cnh-fz-Mnb"/>
+                            <constraint firstAttribute="trailing" secondItem="0oF-1k-eUT" secondAttribute="trailing" id="cWj-ud-5IY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rxx-ln-73x"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="0oF-1k-eUT" id="KIJ-Kh-5CK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2r-98-ejo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
